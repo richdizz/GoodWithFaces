@@ -1,0 +1,17 @@
+﻿<ion-view drag-content="false">
+    <ion-nav-title>{{group.displayName}}</ion-nav-title>
+    <ion-content has-header="true" padding="true">
+        <div class="list">
+            <div class="item item-divider">
+                # Questions
+            </div>
+            <div class="item range range-positive">
+                <input type="range" name="volume" min="1" max="25" ng-model="quiz.qcnt" value="{{quiz.qcnt}}">
+                <span>{{quiz.qcnt}}</span>
+            </div>
+        </div>
+        <button class="button button-block button-positive" ng-click="startQuiz()">
+            Start Quiz
+        </button>
+    </ion-content>
+</ion-view>

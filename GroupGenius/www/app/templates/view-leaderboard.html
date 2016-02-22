@@ -1,0 +1,14 @@
+﻿<ion-view>
+    <ion-nav-title>{{group.displayName}}</ion-nav-title>
+    <ion-content has-header="true">
+        <ion-refresher on-refresh="refresh(true)" spinner="none"></ion-refresher>
+        <ion-list>
+            <div class="item" ng-repeat="ranking in rankings">
+                {{($index + 1)}}. {{ranking.name}}
+                <span class="item-note">
+                    {{ranking.total_score}} of {{ranking.total_possible}} ({{ranking.pct_score | number:2}}%)
+                </span>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

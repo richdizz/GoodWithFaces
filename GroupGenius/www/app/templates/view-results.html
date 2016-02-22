@@ -1,0 +1,12 @@
+﻿<div class="bar bar-header bar-dark">
+    <h1 class="title">Quiz Results</h1>
+</div>
+<div class="results" style="{{modalStyle}}">
+    <ion-content padding="true" class="padding" style="padding: 10px;">
+        <h1 style="color: #fff; text-align: center; font-size: 160px;"><span class="ion-ribbon-b"></span></h1>
+        <h2 style="color: #fff; text-align: center;">{{results.pct}}% ({{results.correct}} of {{results.questions}})</h2>
+        <button class="button button-block button-positive" ng-click="close()">
+            Close
+        </button>
+    </ion-content>
+</div>

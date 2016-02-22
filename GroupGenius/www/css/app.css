@@ -1,0 +1,221 @@
+.spinner {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 300;
+}
+
+.spinnerBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.spinnerSpinner {
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.spinnerSpinner svg {
+    width: 80px;
+    height: 80px;
+    stroke: #b59751;
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); 
+    border-radius: 5px; 
+    background-color: #fff;
+    height: calc(50vw - 25px);
+}
+
+.thumbnail img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+}
+
+.thumbnail img.portrait {
+    width: 100%;
+    height: auto;
+}
+
+.modal {
+    display: block;
+    width: 100%;
+    background: #222;
+}
+
+.modal .face {
+    position: absolute;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.modal .face-text-wrapper {
+    position: absolute; 
+    text-align: center;
+    color: #fff;
+    font-size: 10px; 
+    line-height: 12px;
+}
+
+.modal .face-text-wrapper .face-text {
+    background-color: #fff; 
+    color: #222; 
+    width: 100%; 
+    padding-top: 4px; 
+    border-radius: 4px;
+}
+
+.picker {
+    position: absolute;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100% - 10px);
+}
+
+.picker picker-img {
+    height: 12px;
+    width: 24px;
+}
+
+.picker picker-img img {
+    vertical-align: bottom;
+    height: 12px;
+    width: 24px;
+}
+
+.picker .picker-wrapper {
+    background: #fff;
+}
+
+.picker .picker-wrapper .list .item {
+    padding: 0px; 
+    height: 50px;
+}
+
+.picker .picker-wrapper .list .item img {
+    position: absolute; 
+    height: 50px; 
+    width: 50px;
+}
+
+.picker .picker-wrapper .list .item h2 {
+    margin-left: 60px; 
+    padding-top: 15px;
+}
+
+.quiz-container {
+    position: absolute; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px;
+    top: 42px;
+    background: #222;
+}
+
+
+
+
+
+td-cards {
+  display: block;
+}
+
+td-card {
+  position: absolute;
+  left: 50%;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: -160px;
+  width: 320px;
+  height: 380px;
+  border: 1px solid #999;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  background: #fff;
+}
+
+td-card .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 318px;
+  height: 318px;
+}
+
+td-card img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+td-card .text {
+    text-align: center; 
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: nowrap;
+}
+td-card img.portrait {
+    width: 100%;
+    height: auto;
+}
+
+td-card .swipe {
+    width: 100%;
+}
+
+td-card .swipe .yes {
+    float: right;
+    padding: 4px;
+}
+
+td-card .swipe .no {
+    float: left;
+    padding: 4px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+.results {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #222;
+}

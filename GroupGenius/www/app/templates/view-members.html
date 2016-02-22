@@ -1,0 +1,13 @@
+﻿<ion-view>
+    <ion-nav-title>{{group.displayName}}</ion-nav-title>
+    <ion-content has-header="true">
+        <ion-refresher on-refresh="refresh(true)" spinner="none"></ion-refresher>
+        <ion-list>
+            <a class="item item-avatar" href="#/app/users/{{member.id}}" ng-repeat="member in members | orderBy:'displayName'">
+                <img ng-src="{{member.img}}">
+                <h2>{{member.displayName}}</h2>
+                <p>{{member.jobTitle}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

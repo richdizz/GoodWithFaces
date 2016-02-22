@@ -1,0 +1,31 @@
+﻿<div class="bar bar-header bar-dark">
+    <button class="button button-clear" ng-click="cancel()">Cancel</button>
+    <h1 class="title">Photo</h1>
+    <button class="button button-clear" ng-click="save()" ng-show="canSave">Save</button>
+</div>
+<div class="modal" style="{{modalStyle}}">
+    <img style="{{picStyle}}" ng-src="{{active.img}}" ng-class="{'portrait': photo.portrait}" />
+    <div class="face" style="{{tag.style}}" ng-repeat="tag in active.tags" ng-click="tagPhoto($index)">
+        <div class="face-text-wrapper" style="{{tag.textStyle}}" ng-show="tag.user_name">
+            <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABgAAAAMCAYAAAB4MH11AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQ5NkNCMENDRDM3NjExRTVBMjdCQTQ3NzUzM0VCMTUyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQ5NkNCMENERDM3NjExRTVBMjdCQTQ3NzUzM0VCMTUyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDk2Q0IwQ0FEMzc2MTFFNUEyN0JBNDc3NTMzRUIxNTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RDk2Q0IwQ0JEMzc2MTFFNUEyN0JBNDc3NTMzRUIxNTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7f9wR3AAAAUklEQVR42rTNSwoAIAhF0dq4gzZuBFFEv+dPEEfek5k5CYb6LfBHA8AlnkPonyYuQrRxGLHEIcQa/yIe8SfiFb8invEj4h3fkIj4gkTFB1IFGACw4qdkgIqsRQAAAABJRU5ErkJggg==" style="vertical-align: bottom;">
+            <div class="face-text">{{tag.user_name}}</div>
+        </div>
+    </div>
+    
+    <div class="picker" ng-show="showPicker" style="{{picker.pickerStyle}}">
+        <div class="picker-img" style="{{picker.imgStyle}}">
+            <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABgAAAAMCAYAAAB4MH11AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQ5NkNCMENDRDM3NjExRTVBMjdCQTQ3NzUzM0VCMTUyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQ5NkNCMENERDM3NjExRTVBMjdCQTQ3NzUzM0VCMTUyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RDk2Q0IwQ0FEMzc2MTFFNUEyN0JBNDc3NTMzRUIxNTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RDk2Q0IwQ0JEMzc2MTFFNUEyN0JBNDc3NTMzRUIxNTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7f9wR3AAAAUklEQVR42rTNSwoAIAhF0dq4gzZuBFFEv+dPEEfek5k5CYb6LfBHA8AlnkPonyYuQrRxGLHEIcQa/yIe8SfiFb8invEj4h3fkIj4gkTFB1IFGACw4qdkgIqsRQAAAABJRU5ErkJggg==" style="vertical-align: bottom;" />
+        </div>
+        <div class="picker-wrapper">
+            <label class="item item-input" style="border-top: none;">
+                <input type="text" ng-model="search.searchText" />
+            </label>
+            <ul class="list">
+                <li class="item" ng-repeat="member in members | filter:{displayName:search.searchText}" ng-click="memberPicked(member.id)">
+                    <img ng-src="{{member.img}}" />
+                    <h2>{{member.displayName}}</h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

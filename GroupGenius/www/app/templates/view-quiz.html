@@ -1,0 +1,30 @@
+﻿<div class="bar bar-header bar-dark">
+    <button class="button button-clear" ng-click="cancel()">Cancel</button>
+    <h1 class="title">Question ({{quiz.activeIndex + 1}} of {{quiz.qcnt}})</h1>
+</div>
+<div class="quiz-container">
+    <ion-content class="padding">
+        <td-cards>
+            <td-card ng-repeat="question in liveQuiz"
+                     on-destroy="destroy($index)"
+                     on-swipe-left="swipeLeft($index)"
+                     on-swipe-right="swipeRight($index)" 
+                     on-partial-swipe="cardPartialSwipe(amt)">
+                <div class="image">
+                    <img ng-src="{{question.img}}" ng-class="{'portrait': question.portrait}" />
+                </div>
+                <div class="text">
+                    {{question.questionText}}
+                </div>
+                <div class="swipe">
+                    <div class="yes">
+                        Swipe Right for Yes&nbsp;<span class="ion-ios-redo f20"></span>
+                    </div>
+                    <div class="no">
+                        <span class="ion-ios-undo f20"></span>&nbsp;Swipe Left for No
+                    </div>
+                </div>
+            </td-card>
+        </td-cards>
+    </ion-content>
+</div>
